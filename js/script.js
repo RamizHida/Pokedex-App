@@ -1,43 +1,57 @@
-// Empty Array that will store the pokemon data
-let pokemonList = [];
+let pokemonRepository = (function () {
+  // Empty Array that will store the pokemon data
+  let pokemonList = [];
 
-// Pokemon objects
-let squirtle = {
-  name: 'Squirtle',
-  height: '0.5',
-  types: ['water'],
-};
+  // Add individual pokemon objects to a single pokemon array
+  pokemonList.push(
+    {
+      name: 'Squirtle',
+      height: '0.5',
+      types: ['water'],
+    },
+    {
+      name: 'Charizard',
+      height: '1.7',
+      types: ['fire', 'flying'],
+    },
+    {
+      name: 'Jigglypuff',
+      height: '0.5',
+      types: ['fairy', 'normal'],
+    },
+    {
+      name: 'Dugtrio',
+      height: '.7',
+      types: ['ground'],
+    },
+    {
+      name: 'Weepinbell',
+      height: '1',
+      types: ['grass', 'poision'],
+    }
+  );
 
-let charizard = {
-  name: 'Charizard',
-  height: '1.7',
-  types: ['fire', 'flying'],
-};
+  function getAll() {
+    return pokemonList;
+  }
 
-let jigglyPuff = {
-  name: 'Jigglypuff',
-  height: '0.5',
-  types: ['fairy', 'normal'],
-};
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
 
-let dugTrio = {
-  name: 'Dugtrio',
-  height: '.7',
-  types: ['ground'],
-};
-
-let weepinBell = {
-  name: 'Weepinbell',
-  height: '1',
-  types: ['grass', 'poision'],
-};
-
-// Add individual pokemon objects to a single pokemon array
-pokemonList.push(squirtle, charizard, jigglyPuff, dugTrio, weepinBell);
+  return {
+    getAll: getAll,
+    add: add,
+  };
+})();
 
 function printArrDetails(arr) {
   const isLarge = arr.height > 1.5 ? " : Wow that's big!" : '';
   document.write(`<p>${arr.name} (height: ${arr.height})${isLarge} </p>`);
 }
+
+// Get access to pokemonList array
+let pokemonListArr = pokemonRepository.getAll();
+
 // Iterate over Pokemon array and display details
-pokemonList.forEach(printArrDetails);
+pokemonListArr.forEach(printArrDetails);
