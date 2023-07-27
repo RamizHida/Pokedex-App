@@ -22,7 +22,7 @@ let jigglyPuff = {
 
 let dugTrio = {
   name: 'Dugtrio',
-  height: '0.7',
+  height: '.7',
   types: ['ground'],
 };
 
@@ -35,15 +35,9 @@ let weepinBell = {
 // Add individual pokemon objects to a single pokemon array
 pokemonList.push(squirtle, charizard, jigglyPuff, dugTrio, weepinBell);
 
-// Display pokemon name and height to the DOM
-for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].height < 1.5) {
-    document.write(
-      `${pokemonList[i].name} (height: ${pokemonList[i].height}) <br> <br>`
-    );
-  } else {
-    document.write(
-      `${pokemonList[i].name} (height: ${pokemonList[i].height}) :  Wow, that's big! <br><br>`
-    );
-  }
+function printArrDetails(arr) {
+  const isLarge = arr.height > 1.5 ? " : Wow that's big!" : '';
+  document.write(`<p>${arr.name} (height: ${arr.height})${isLarge} </p>`);
 }
+// Iterate over Pokemon array and display details
+pokemonList.forEach(printArrDetails);
