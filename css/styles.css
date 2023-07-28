@@ -1,0 +1,40 @@
+/* Display each pokemon (with its button) on seperate columns */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid red;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Line up the pokemon name and button on both corners */
+li {
+  display: flex;
+  padding: 10px;
+  font-size: 22px;
+  width: 100%;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+
+/* Align title with container */
+.pokemon-container {
+  text-align: center;
+}
+
+.btn {
+  background: blue;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+}

@@ -35,23 +35,43 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  // Add new pokemon object to pokemon array
   function add(pokemon) {
     pokemonList.push(pokemon);
+  }
+
+  // Display pokemon details to UI
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let pokemonListItem = document.createElement('li');
+    pokemonListItem.innerHTML = pokemon.name;
+
+    let btn = document.createElement('button');
+    btn.innerText = 'click me';
+    btn.classList.add('btn');
+    btn.addEventListener('click', function () {
+      showDetails(pokemon);
+    });
+
+    pokemonListItem.appendChild(btn);
+    pokemonList.appendChild(pokemonListItem);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem,
   };
 })();
-
-function printArrDetails(arr) {
-  const isLarge = arr.height > 1.5 ? " : Wow that's big!" : '';
-  document.write(`<p>${arr.name} (height: ${arr.height})${isLarge} </p>`);
-}
 
 // Get access to pokemonList array
 let pokemonListArr = pokemonRepository.getAll();
 
 // Iterate over Pokemon array and display details
-pokemonListArr.forEach(printArrDetails);
+pokemonListArr.forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
