@@ -1,3 +1,7 @@
+body {
+  background-color: #4c4e52;
+}
+
 /* Display each pokemon (with its button) on seperate columns */
 ul {
   list-style: none;
@@ -7,15 +11,19 @@ ul {
   align-items: center;
   border: 2px solid red;
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
-  background-color: #000;
+}
+
+.pokemon-list {
+  margin-top: 120px;
 }
 
 /* Line up the pokemon name and button on both corners */
 li {
   display: flex;
   padding: 10px;
+  color: #fff;
   font-size: 22px;
   margin: 10px 0;
   width: 100%;
@@ -26,121 +34,67 @@ li {
   border-radius: 5px;
 }
 
-/* Align title with container */
-.pokemon-container {
-  text-align: center;
-}
-
-.btn {
-  background: #4c4e52;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  color: #fff;
-}
-
-.btn:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.modal-container {
-  display: none;
-  text-align: center;
-  background: #fff;
-  z-index: 999;
-  opacity: 1;
-  border: 1px solid black;
-  width: 40%;
-  margin: 0 auto;
-  height: fit-content;
-  border-radius: 20px;
-  padding: 10px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-container h1 {
-  margin: 0;
-}
-
-.is-visible {
-  display: grid;
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 40%;
-  left: 30%;
-}
-
-.modal-container p {
-  font-size: 22px;
-}
-
-#pokemon-features {
-  overflow: hidden;
-  height: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-}
-
 img {
   height: 135px;
   width: 135px;
 }
 
-#close-modal-btn {
-  border: 1px solid black;
-  background: none;
-  width: min-content;
-  position: fixed;
-  border-radius: 10px;
-  font-size: 20px;
-  top: 42%;
-  left: 67%;
+.modal-content {
+  text-align: center;
 }
 
-#close-modal-btn:hover {
-  cursor: pointer;
-  transform: scale(1.1);
+.modal-header {
+  color: #7393b3;
+}
+
+.modal-title {
+  margin-left: 33%;
+}
+
+.modal-footer {
+  display: block;
+}
+
+.modal-body {
+  font-size: 30px;
+  /* color: #7393b3; */
+  color: #4c4e52;
+}
+
+.modal-body span {
+  color: #7393b3;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+  font-size: 30px;
 }
 
 /* Media queires */
 
-@media all and (max-width: 950px) {
-  #close-modal-btn {
-    position: fixed;
-    top: 42%;
-    left: 66%;
+@media all and (max-width: 605px) {
+  .btn {
+    font-size: 14px;
   }
-}
 
-@media all and (max-width: 750px) {
-  #close-modal-btn {
-    margin-left: 2px;
-    position: fixed;
-    top: 44%;
-    left: 65%;
+  li {
+    font-size: 16px;
   }
 }
 
 @media all and (max-width: 550px) {
   .btn {
-    font-size: 18px;
+    font-size: 12px;
+    padding: 4px;
   }
 
   li {
-    font-size: 20px;
+    font-size: 16px;
   }
+}
 
-  .modal-container h1 {
-    font-size: 22px;
-  }
-
-  #close-modal-btn {
-    position: fixed;
-    top: 42%;
-    left: 63%;
+@media all and (max-width: 462px) {
+  li {
+    font-size: 14px;
   }
 }
