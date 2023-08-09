@@ -1,3 +1,5 @@
+/* eslint-disable no-unexpected-multiline */
+/* eslint-disable no-undef */
 !(function (e, t) {
   'object' == typeof exports && 'undefined' != typeof module
     ? t()

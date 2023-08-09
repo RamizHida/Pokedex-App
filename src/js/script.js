@@ -1,6 +1,7 @@
 let pokemonRepository = (function () {
   // Empty Array that will store pokemon data
   let pokemonList = [];
+
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
   function getAll() {
@@ -124,9 +125,9 @@ let modal = (function () {
     modalTitle.append(name);
     modalBody.append(img);
     modalBody.append(height);
-    console.log('clicked');
 
     // Show modal to page
+    // eslint-disable-next-line no-undef
     $('#pokemonModal').modal('show');
   }
 
