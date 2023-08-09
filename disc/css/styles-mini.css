@@ -68,13 +68,13 @@ img {
     font-size: 16px;
   }
 }
-@media all and (max-width: 488px) {
+@media all and (max-width: 515px) {
   .btn-dark {
     font-size: 12px;
     padding: 4px;
   }
 }
-@media all and (max-width: 462px) {
+@media all and (max-width: 465px) {
   li {
     font-size: 14px;
   }
